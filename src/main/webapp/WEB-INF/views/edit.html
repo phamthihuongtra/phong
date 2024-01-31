@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xml:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List rooms</title>
+</head>
+<body>
+<h1>Creat room form</h1>
+<button><a th:href="@{/rooms}">Back to list</a></button>
+
+<div>
+    <form action="/rooms/update" method="post" th:object="${room}">
+        <input type="hidden" th:field="*{id}">
+        <input type="text" th:field="*{name}" placeholder="Details...">
+        <input type="text" th:field="*{detail}" placeholder="Details...">
+        <input type="text" th:field="*{status}" placeholder="Details...">
+        <input type="text" th:field="*{price}" placeholder="Details...">
+        <input type="text" th:field="*{numberOfPerson}" placeholder="Details...">
+        <input type="text" th:field="*{numberBed}" placeholder="Details...">
+        <br>
+        <select th:field="*{numberOfPerson}">
+            <option value="" selected>Choose type</option>
+            <option value="con phong" selected>Con phong</option>
+            <option value="het phong" selected>Het phong</option>
+        </select>
+        <br>
+        <input type="text" th:field="*{price}" placeholder="Price...">
+        </br>
+        <select th:field="*{status}">
+            <option value="true">Con hang</option>
+            <option value="false">Het hang</option>
+        </select>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+</html>

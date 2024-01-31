@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+  <title>Product</title>
+</head>
+<body>
+<h3>delete Room</h3>
+<p>
+  <a th:href="@{/Room}">
+    Back to Room list
+  </a>
+</p>
+<div id="form">
+  <form th:action="@{/rooms/delete}" method="post" novalidate="novalidate">
+    <div>
+      <input type="hidden" name="id" th:value="${Room.getId()}">
+    </div>
+    <div>
+      <label for="name">Name: </label>
+      <label id="name" th:text="${Room.getName()}"></label>
+    </div>
+    <div>
+      <label for="Detail">Detail: </label>
+      <label id="Detail" th:text="${Room.getDetail()}"></label>
+    </div>
+    <div>
+      <label for="status">Status: </label>
+      <label id="status" th:text="${Room.getStatus()}"></label>
+    </div>
+    <div>
+      <label for="price">Price </label>
+      <label id="price" th:text="${Room.getPrice()}"></label>
+    </div>
+    <input type="submit" value="delete">
+  </form>
+</div>
+</body>
+</html>
